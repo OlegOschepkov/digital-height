@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+	<meta charset="utf-8">
+	<!-- utf-8 works for most cases -->
+	<meta name="viewport" content="width=device-width">
+	<!-- Forcing initial-scale shouldn't be necessary -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Use the latest (edge) version of IE rendering engine -->
+	<meta name="x-apple-disable-message-reformatting">
+	<!-- Disable auto-scale in iOS 10 Mail entirely -->
+	<title></title>
+	<!-- The title tag shows in email notifications, like Android 4.4. -->
+
+	<!-- CSS Reset : BEGIN -->
+	<style>
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+           color: #222A33;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+	        margin: 0;
+	        padding: 0;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        *[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+	</style>
+
+	<!-- CSS Reset : END -->
+
+	<!-- Progressive Enhancements : BEGIN -->
+	<style type="text/css">
+        body {
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+           color: #222A33;
+        }
+
+        td {
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+        }
+
+        a {
+            color: #F31B56;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F31B11;
+        }
+
+        a:active {
+            color: #F31B11;
+        }
+
+        h1 {
+            font-size: 30px !important;
+            color: #F31B56;
+            margin-top: 50px !important;
+            margin-bottom: 25px !important;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 20px !important;
+            color: #F31B56;
+            margin-top: 58px !important;
+            margin-bottom: 7px !important;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 24px 40px;
+            display: inline-block;
+            font-size: 16px;
+            line-height: 22px;
+           color: #222A33;
+            background-color: #F31B56;
+        }
+
+        .cellpadding900 {
+            padding: 0 12.5% 0 12.5%;
+        }
+
+        .header900 {
+            padding: 10px 12.5% 29px 12.5%;
+        }
+
+        ul {
+	        margin-left: 11px;
+        }
+
+        li {
+	        line-height: 30px;
+        }
+
+        .logo-text {
+	        width: 40%;
+        }
+
+
+        /*@media only screen and (min-device-width: 600px) {*/
+        /*    .cellpadding900 {*/
+        /*        padding: 36px 0 16px 0;*/
+        /*    }*/
+        /*    .header900 {*/
+        /*        padding: 24px 0 24px 0;*/
+        /*    }*/
+
+        /*}*/
+
+        @media only screen and (max-device-width: 600px), only screen and (max-width: 600px) {
+            html {
+                -webkit-text-size-adjust: none;
+                -ms-text-size-adjust: none;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            .cellpadding900 {
+                padding: 0 17px 0 17px;
+            }
+
+            .header900 {
+                padding: 15px 16px 29px 16px;
+            }
+
+            .header900 td {
+	            width: 100%;
+            }
+
+            h1 {
+                font-size: 25px;
+                margin-top: 37px;
+                margin-bottom: 16px;
+                text-align: center;
+	            color: #F31B56;
+            }
+
+            h2 {
+                font-size: 18px;
+                margin-bottom: 0;
+            }
+
+            .btn {
+                padding: 14px 26px;
+                font-size: 14px;
+                line-height: 22px;
+            }
+
+            .padding-mobile-top {
+	            padding-top: 60px !important;
+            }
+            .padding-mobile-bottom {
+	            padding-bottom: 9px !important;
+            }
+
+        }
+
+        .mail_preheader {
+            display: none !important;
+        }
+	</style>
+
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #ffffff;">
+<center style="width: 100%; background-color: #ffffff;">
+	<div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;background-color: #ffffff;">
+		&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+	</div>
+	<div style="width: 100%; background-color: #ffffff;word-break: normal;-webkit-text-size-adjust:none; -ms-text-size-adjust: none;line-height: normal; padding-bottom: 46px" align="center">
+		<!-- BEGIN BODY -->
+		<table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 900px; margin: 0 auto;background-color: #222A33;">
+			<tr>
+				<td valign="top" class="header900" style="padding: 10px 12.5% 17px 12.5%">
+					<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td class="logo" style="text-align: left;">
+								<a href="#"><img src="http://htmlonelove.top/digital-heights/logo.png" alt="Логотип" style="width: auto; height: 66px; margin: 0; display: block;"></a>
+							</td>
+							<td style="text-align: right" width="40%" class="logo-text">
+								<div style="font-family: Arial, sans-serif;text-align: right; font-size: 14px; line-height: 18px; font-weight: 700;color: #222A33">
+									Приглашаем вас принять участие в&nbsp;премии&nbsp;<span style="color:#F31B56;">«Цифровые вершины - 2020»</span>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!-- end tr -->
+		</table>
+		<table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 900px; margin: 0 auto;">
+			<tr>
+				<td width="100%" valign="top" style="padding: 0; margin: 0; padding-bottom: 22px; padding-top: 12px; overflow: hidden">
+					<img src="http://htmlonelove.top/digital-heights/dots.png" alt="Логотип" style="width: 900px; height: 35px; margin: 0; display: block;">
+				</td>
+			</tr>
+			<!-- end tr -->
+		</table>
+		<table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 900px; margin: 0 auto;" class="cellpadding900">
+			<tr>
+				<td width="100%" valign="top" align="left" style="font-family: Arial, sans-serif;padding: 0 17px; margin: 0; color:#F31B56;font-weight: 700; font-size: 20px;">
+					<h1 style="text-align: center; margin-top: 50px; margin-bottom: 25px">Уважаемые коллеги!</h1>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" valign="top" align="left" style="font-family: Arial, sans-serif; margin: 0; font-size: 16px; line-height: 22px;color: #222A33; font-weight: 400; padding: 0 12.5% 22px" class="cellpadding900">
+					<p style="margin: 0; padding: 0">Приглашаем вас принять участие в&nbsp;конкурсе первой национальной премии в&nbsp;области ИТ&nbsp;разработки &laquo;Цифровые вершины&raquo;. Премия вручается с&nbsp;2016 года по&nbsp;инициативе Российской академии народного хозяйства и&nbsp;государственной службы при Президенте Российской Федерации за&nbsp;лучшие отечественные&nbsp;ИТ решения для повышения личной продуктивности, эффективности бизнеса и&nbsp;госуправления. Конкурс проходит под патронатом Министерства цифрового развития, связи и&nbsp;массовых коммуникаций&nbsp;РФ при поддержке Mail.ru Group.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" valign="top" align="left" style="font-family: Arial, sans-serif; margin: 0; font-size: 16px; line-height: 22px;color: #222A33; font-weight: 400; padding: 0 12.5% 22px" class="cellpadding900">
+					<p style="margin: 0; padding: 0">
+						&laquo;Цифровые вершины&raquo;&nbsp;&mdash; это уникальная площадка, объединяющая российских управленцев и&nbsp;представителей отечественной ИТ-индустрии. Жюри, оценивающее работы финалистов, формируется непосредственно из&nbsp;представителей государства и бизнеса, специалистов, отвечающих за&nbsp;внедрение ИТ-решений в&nbsp;органах власти и коммерческих компаниях. Таким образом финалисты премии выступают перед потенциальными заказчиками.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" valign="top" align="center" style="padding: 0; margin: 0;">
+					<img src="http://htmlonelove.top/digital-heights/banner1.png" alt="Логотип" style="max-width: 676px; max-height: 400px; width: 100%; height: 100%; margin: 0 auto; display: block;">
+				</td>
+			</tr>
+			<!-- end tr -->
+			<tr>
+				<td width="100%" valign="top" align="left" style="font-family: Arial, sans-serif;padding: 0 17px 22px; margin: 0; color:#F31B56;font-weight: 700">
+					<h2 style="text-align: center;margin-top: 58px; margin-bottom: 7px;">Номинации премии &laquo;Цифровые вершины&raquo; 2020:</h2>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" valign="top" align="left" style="font-family: Arial, sans-serif; margin: 0;  padding: 0 12.5% 22px;color: #222A33; font-weight: 400;font-size: 16px; line-height: 30px;" class="cellpadding900">
+					<div>
+						<ul style="list-style-type:disc; margin: 0; padding: 0; margin-left: 11px; padding-bottom: 8px">
+							<li style="margin: 0; padding: 0;">Лучшее решение для организации удалённой работы</li>
+							<li style="margin: 0; padding: 0;">Лучшее решение для дистанционного обучения</li>
+							<li style="margin: 0; padding: 0;">Лучшее решение для борьбы с&nbsp;COVID-19</li>
+							<li style="margin: 0; padding: 0;">Лучшее решение с&nbsp;использованием искусственного интеллекта для повышения эффективности</li>
+							<li style="margin: 0; padding: 0;">Лучшее решение для повышения информационной безопасности</li>
+							<li style="margin: 0; padding: 0;">Студенческая номинация &laquo;Вперёд к&nbsp;вершинам!&raquo;</li>
+							<li style="margin: 0; padding: 0;">Спецноминация &laquo;Цифровое волонтёрство&raquo;</li>
+							<li style="margin: 0; padding: 0;">Партнёрская номинация с&nbsp;Опорой России&nbsp;&mdash; &laquo;Опора цифровизации&raquo;</li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" valign="top" align="center" style="padding: 0; margin: 0;">
+					<img src="http://htmlonelove.top/digital-heights/banner2.png" alt="Логотип" style="max-width: 676px; max-height: 400px; width: 100%; height: 100%; margin: 0 auto; display: block;">
+				</td>
+			</tr>
+			<!-- end tr -->
+			<tr>
+				<td width="100%" valign="top" align="left" style="font-family: Arial, sans-serif;margin: 0; font-size: 16px; line-height: 22px;  padding: 30px 12.5% 20px;color: #222A33; font-weight: 400;" class="cellpadding900 padding-mobile-top">
+					<p style="margin: 0; padding: 0">
+						Заявки принимаются до&nbsp;31&nbsp;декабря 2020&nbsp;года. Финальный этап и&nbsp;торжественное подведение итогов премии состоится в&nbsp;рамках Гайдаровского форума-2021.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" valign="top" align="left" style="font-family: Arial, sans-serif;margin: 0; font-size: 16px; line-height: 22px; padding: 0 12.5% 29px;color: #222A33; font-weight: 400;" class="cellpadding900 padding-mobile-bottom">
+					<p style="margin: 0; padding: 0">
+						Получить подробную информацию о&nbsp;номинациях можно на&nbsp;сайте Цифровых Вершин. Участие бесплатное, допускаются проекты, основанные в&nbsp;Российской Федерации.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" align="center" style="font-family: Arial, sans-serif;padding: 30px 12.5% 30px; margin: 0; font-size: 16px; line-height: 22px;color: #222A33; font-weight: 400;" class=" padding-mobile">
+					<div>
+						<table border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td align="center" class="btn" bgcolor="#F31B56" style="padding: 24px 40px;">
+									<a href="https://litmus.com" target="_blank" style="font-family: Arial, sans-serif;color: #ffffff; text-decoration: none; text-decoration: none; border: 1px solid #F31B56; display: inline-block; margin: 0 auto">Перейти на сайт Цифровых вершин</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 668px; margin: 0 auto;">
+			<tr>
+				<td width="100%" valign="top" style="padding: 0; margin: 0; padding-bottom: 65px; padding-top: 30px; overflow: hidden">
+					<img src="http://htmlonelove.top/digital-heights/dots-small.png" alt="Логотип" style="width: 900px; height: 3px; margin: 0; display: block;">
+				</td>
+			</tr>
+			<!-- end tr -->
+		</table>
+		<table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 590px; margin: 0 auto;">
+			<tr>
+				<td width="100%" valign="top" align="center" style="font-family: Arial, sans-serif;padding: 0 16px 22px; margin: 0; font-size: 20px; line-height: 25px;color: #222A33; font-weight: 400;">
+					<p style="margin: 0; padding: 0">Финальная часть &laquo;Цифровых вершин 2020&raquo; пройдет в&nbsp;рамках <span style="color: #F31B56">Гайдаровского Форума</span> 15&nbsp;января 2021.</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" valign="top" align="center" style="font-family: Arial, sans-serif;padding: 0 16px 35px; margin: 0; font-size: 20px; line-height: 25px;color: #222A33; font-weight: 400;">
+					<p style="margin: 0; padding: 0">Не&nbsp;упустите возможность показать свой проект всей стране!</p>
+				</td>
+			</tr>
+			<!-- end tr -->
+		</table>
+		<table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 668px; margin: 0 auto;">
+			<tr>
+				<td width="100%" valign="top" style="padding: 0; margin: 0; padding-bottom: 65px; padding-top: 30px; overflow: hidden" class="padding-mobile-bottom">
+					<img src="http://htmlonelove.top/digital-heights/dots-small.png" alt="Логотип" style="width: 900px; height: 3px; margin: 0; display: block;">
+				</td>
+			</tr>
+			<!-- end tr -->
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+				<td align="center" valign="top" style="padding-top: 22px; padding-bottom: 30px">
+					<table width="269" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+						<tbody>
+						<tr>
+							<td align="center" valign="top" width="50%">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+									<tr>
+										<td valign="top" width="53" align="center" style="font-size: 0; line-height: 0">
+											<div style="display: inline-block; vertical-align: top; width: 100%; max-width: 43px; overflow: hidden; margin-right: 10px;">
+												<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; ">
+													<tbody>
+													<tr>
+														<td align="left" valign="top">
+															<table width="43" height="43" border="0" cellspacing="0" cellpadding="0" style="padding: 0; margin: 0; font-size: 16px; line-height: 20px">
+																<tbody>
+																<tr>
+																	<td valign="middle" align="center">
+																		<a href="https://www.odnoklassniki.ru" target="_blank" style="text-decoration: none;">
+																			<img src="http://htmlonelove.top/digital-heights/icon-ok.png" width="43" height="43" alt="link" border="0" style="display: block;">
+																		</a>
+																	</td>
+																</tr>
+																</tbody>
+															</table>
+														</td>
+													</tr>
+													</tbody>
+												</table>
+											</div>
+										</td>
+										<td valign="top" width="53" align="center" style="font-size: 0; line-height: 0">
+											<div style="display: inline-block; vertical-align: top; width: 100%; max-width: 43px; overflow: hidden; margin-right: 10px;">
+												<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; ">
+													<tbody>
+													<tr>
+														<td align="left" valign="top">
+															<table width="43" height="43" border="0" cellspacing="0" cellpadding="0" style="padding: 0; margin: 0; font-size: 16px; line-height: 20px">
+																<tr>
+																	<td valign="middle" align="center">
+																		<a href="https://vk.com" target="_blank" style="text-decoration: none;">
+																			<img src="http://htmlonelove.top/digital-heights/icon-vk.png" width="43" height="43" alt="link" border="0" style="display: block;">
+																		</a>
+																	</td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+													</tbody>
+												</table>
+											</div>
+										</td>
+										<td valign="top" width="53" align="center" style="font-size: 0; line-height: 0">
+											<div style="display: inline-block; vertical-align: top; width: 100%; max-width: 43px; overflow: hidden; margin-right: 10px;">
+												<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; ">
+													<tbody>
+													<tr>
+														<td align="left" valign="top">
+															<table width="43" height="43" border="0" cellspacing="0" cellpadding="0" style="padding: 0; margin: 0; font-size: 16px; line-height: 20px">
+																<tbody>
+																<tr>
+																	<td valign="middle" align="center">
+																		<a href="https://www.instagram.com" target="_blank" style="text-decoration: none;">
+																			<img src="http://htmlonelove.top/digital-heights/icon-insta.png" alt="link" border="0" width="43" height="43"  style="display: block;">
+																		</a>
+																	</td>
+																</tr>
+																</tbody>
+															</table>
+														</td>
+													</tr>
+													</tbody>
+												</table>
+											</div>
+										</td>
+										<td valign="top" width="53" align="center" style="font-size: 0; line-height: 0">
+											<div style="display: inline-block; vertical-align: top; width: 100%; max-width: 43px; overflow: hidden; margin-right: 10px;">
+												<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; ">
+													<tbody>
+													<tr>
+														<td align="left" valign="top">
+															<table width="43" height="43" border="0" cellspacing="0" cellpadding="0" style="padding: 0; margin: 0; font-size: 16px; line-height: 20px">
+																<tbody>
+																<tr>
+																	<td valign="middle" align="center">
+																		<a href="https://www.facebook.com" target="_blank" style="text-decoration: none;">
+																			<img src="http://htmlonelove.top/digital-heights/icon-fb.png" alt="link" border="0" width="43" height="43" style="display: block;">
+																		</a>
+																	</td>
+																</tr>
+																</tbody>
+															</table>
+														</td>
+													</tr>
+													</tbody>
+												</table>
+											</div>
+										</td>
+										<td valign="top" width="43" align="center" style="font-size: 0; line-height: 0">
+											<div style="display: inline-block; vertical-align: top; width: 100%; max-width: 43px; overflow: hidden;">
+												<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; ">
+													<tbody>
+													<tr>
+														<td align="left" valign="top">
+															<table width="43" height="43" border="0" cellspacing="0" cellpadding="0" style="padding: 0; margin: 0; font-size: 16px; line-height: 20px">
+																<tbody>
+																<tr>
+																	<td valign="middle" align="center">
+																		<a href="https://www.youtube.com" target="_blank" style="text-decoration: none;">
+																			<img src="http://htmlonelove.top/digital-heights/icon-next.png" alt="link" border="0" width="43" height="43" style="display: block;">
+																		</a>
+																	</td>
+																</tr>
+																</tbody>
+															</table>
+														</td>
+													</tr>
+													</tbody>
+												</table>
+											</div>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		<table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 668px; margin: 0 auto;">
+			<tr>
+				<td width="100%" valign="top" align="center" style="font-family: Arial, sans-serif;padding: 0; margin: 0; font-size: 16px; line-height: 22px;color: #222A33; font-weight: 400; padding-bottom: 22px">
+					<a href="https://www.youtube.com" target="_blank" style="color: #9F9F9F; text-decoration: underline;">Отписаться от&nbsp;подписки</a>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+</center>
+</body>
+</html>
